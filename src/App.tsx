@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { UNITS_URL, BASE_URL} from  './components/Api';
+import { UNITS_URL, BASE_URL } from  './components/Api';
 import './App.css';
 import Heading from './components/Headings';
+
 
 
 const App = () => {
@@ -11,18 +12,24 @@ const App = () => {
   useEffect(() => {
     axios
       .get(BASE_URL + UNITS_URL)
-      .then((response) => setData(response.data.data));
+      .then((respon) => {
+        console.log(respon)
+        setData(respon.data.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }, []);
 
   return (
     <>
-      <Heading content="RUBRIC MARINES"></Heading>
+      <Heading content="Thousand Sons Units"></Heading>
       <ul>
-        {data.length > 0
-          ? data.map((unit, idx) => {
-              return <li key={idx}>{unit}</li>;
+        {data.length > 0 ? data.map((unit, idx) => 
+            {
+              return <li key={idx}>{unit.attributes.Name}</li>;
             })
-          : null}
+          : "There are no units"}
       </ul>
     </>
   );
@@ -30,18 +37,4 @@ const App = () => {
 
 export default App;
 
-
-
-
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Heading content="RUBRIC MARINES"></Heading>
-//     </div>
-//   );
-// }
-
-// export default App;
 
