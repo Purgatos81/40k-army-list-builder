@@ -4,7 +4,21 @@ import { UNITS_URL, BASE_URL } from  './components/Api';
 import './App.css';
 import Heading from './components/Headings';
 
-
+interface UnitState {
+  attributes: {
+    Name : string,
+    Move : string, 
+    WeaponSkill : string,
+    BallisticSkill : string,
+    Strengt : string,
+    Toughnes : string, 
+    Attacks : string,
+    Wounds : string,
+    Leadership : string,
+    Save : string,
+    CostPerModel : number
+  }
+}
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -25,20 +39,9 @@ const App = () => {
     <>
       <Heading content="Thousand Sons Units"></Heading>
       <ul>
-        {data.length > 0 ? data.map((unit : {attributes : {Name : string,
-                                                           Move : string, 
-                                                           WeaponSkill : string,
-                                                           BallisticSkill : string,
-                                                           Strengt : string,
-                                                           Toughnes : string, 
-                                                           Attacks : string,
-                                                           Wounds : string,
-                                                           Leadership : string,
-                                                           Save : string,
-                                                           CostPerModel : string
-                                                          }}, idx) => 
+        {data.length > 0 ? data.map((unit : UnitState, idx) => 
             {
-              return <li key={idx}><div className='unitName'>{unit.attributes.Name}</div>
+              return <li className='liCard' key={idx}><h3 className='unitName'>{unit.attributes.Name}</h3>
                                    <div>{unit.attributes.Move}</div>
                                    <div>{unit.attributes.WeaponSkill}</div>
                                    <div>{unit.attributes.BallisticSkill}</div> 
