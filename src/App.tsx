@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Attributes } from 'react';
 import { UNITS_URL, BASE_URL } from  './components/Api';
 import './App.css';
 import Heading from './components/Headings';
@@ -25,7 +25,7 @@ const App = () => {
     <>
       <Heading content="Thousand Sons Units"></Heading>
       <ul>
-        {data.length > 0 ? data.map((unit, idx) => 
+        {data.length > 0 ? data.map((unit : {attributes : {Name : string}}, idx) => 
             {
               return <li key={idx}>{unit.attributes.Name}</li>;
             })
