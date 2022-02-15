@@ -1,8 +1,55 @@
+body {
+    margin: 5% 10%;
+}
 
+ul {
+    padding: 0;
+}
 
+li {
+    list-style-type: none;
+}
 
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
+.liCard {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    min-width: 40%;
+    background-color: #18abcc;
+    margin-bottom: 20px;
+    margin-left: 0;
+    padding: 0 20px;
+}
 
+.statsContainer {
+    display: flex;
+    justify-content: space-between;
+}
 
+.singleStatContainer {
+    display: flex;
+    flex-direction: column;
+    border:  1px solid black;
+    min-width:  25px;
+    align-items: center;
+}
 
+.statDescriptor{
+    margin: 0;
 
+}
+
+.statP {
+    margin: 0;
+}
+
+.unitCostContainer {
+    display: flex;
+    justify-content: space-between;
+}

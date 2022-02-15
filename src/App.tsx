@@ -4,7 +4,7 @@ import { UNITS_URL, BASE_URL } from  './components/Api';
 import './App.css';
 import Heading from './components/Headings';
 
-interface UnitState {
+interface UnitStats {
   attributes: {
     Name : string,
     Move : string, 
@@ -38,23 +38,55 @@ const App = () => {
   return (
     <>
       <Heading content="Thousand Sons Units"></Heading>
-      <ul>
-        {data.length > 0 ? data.map((unit : UnitState, idx) => 
+      <ul className='cardsContainer'>
+        {data.length > 0 ? data.map((unit : UnitStats, idx) => 
             {
               return <li className='liCard' key={idx}><h3 className='unitName'>{unit.attributes.Name}</h3>
-                                   <div>{unit.attributes.Move}</div>
-                                   <div>{unit.attributes.WeaponSkill}</div>
-                                   <div>{unit.attributes.BallisticSkill}</div> 
-                                   <div>{unit.attributes.Strengt}</div>
-                                   <div>{unit.attributes.Toughnes}</div>
-                                   <div>{unit.attributes.Attacks}</div>
-                                   <div>{unit.attributes.Wounds}</div>
-                                   <div>{unit.attributes.Leadership}</div>
-                                   <div>{unit.attributes.Save}</div>
-                                   <div>{unit.attributes.CostPerModel}</div>
+                                <div className='statsContainer'>  
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>M</p>
+                                     <p className='statP'>{unit.attributes.Move}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>WS</p>
+                                     <p className='statP'>{unit.attributes.WeaponSkill}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>BS</p>
+                                     <p className='statP'>{unit.attributes.BallisticSkill}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>S</p>
+                                     <p className='statP'>{unit.attributes.Strengt}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>T</p>
+                                     <p className='statP'>{unit.attributes.Toughnes}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>W</p>
+                                     <p className='statP'>{unit.attributes.Wounds}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>A</p>
+                                     <p className='statP'>{unit.attributes.Attacks}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>Ld</p>
+                                     <p className='statP'>{unit.attributes.Leadership}</p>
+                                  </div>
+                                  <div className='singleStatContainer'>
+                                     <p className='statDescriptor'>Sv</p>
+                                     <p className='statP'>{unit.attributes.Save}</p>
+                                  </div>
+                                </div>
+                                <div className='unitCostContainer'>
+                                  <p className='unitCostDescriptor'>Cost Per Model: </p>
+                                  <p className='unitCostP'>{unit.attributes.CostPerModel}p</p>
+                                </div>   
               </li>;
             })
-          : "There are no units"}
+          : "Warping in units"}
       </ul>
     </>
   );
