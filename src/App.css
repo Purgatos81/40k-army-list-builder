@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 5% 10%;
+    background-color: #54BFB5;
 }
 
 ul {
@@ -21,10 +26,13 @@ li {
     flex-direction: column;
     max-width: 40%;
     min-width: 40%;
-    background-color: #18abcc;
-    margin-bottom: 20px;
+    background-color: #3498BF;
+    margin-bottom: 40px;
     margin-left: 0;
     padding: 0 20px;
+    box-shadow: 20px 20px 10px #52E2F2;
+    border-radius: 5px;
+
 }
 
 .statsContainer {

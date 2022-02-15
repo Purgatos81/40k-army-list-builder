@@ -6,7 +6,7 @@ type Props = {
 function Heading({ content }: Props) {
     return (
         <>
-            <h1>{content}</h1>
+            <h1 className="pageHeadingText">{content}</h1>
         </>
     );
 }
