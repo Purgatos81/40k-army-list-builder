@@ -49,6 +49,10 @@ li {
     margin: 0;
 }
 
+.unitDescriptionP {
+    font-style: italic;
+}
+
 .unitCostContainer {
     display: flex;
     justify-content: space-between;

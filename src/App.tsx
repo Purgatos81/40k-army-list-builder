@@ -16,7 +16,8 @@ interface UnitStats {
     Wounds : string,
     Leadership : string,
     Save : string,
-    CostPerModel : number
+    CostPerModel : number,
+    Description : string
   }
 }
 
@@ -79,6 +80,9 @@ const App = () => {
                                      <p className='statDescriptor'>Sv</p>
                                      <p className='statP'>{unit.attributes.Save}</p>
                                   </div>
+                                </div>
+                                <div className='unitDescriptionContainer'>
+                                  <p className='unitDescriptionP'>{unit.attributes.Description}</p>
                                 </div>
                                 <div className='unitCostContainer'>
                                   <p className='unitCostDescriptor'>Cost Per Model: </p>
