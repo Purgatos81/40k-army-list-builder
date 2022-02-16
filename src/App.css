@@ -1,10 +1,18 @@
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 5% 10%;
-    background-color: #54BFB5;
+    background-image: linear-gradient(to top left, rgba(52,152,191,0.5), rgba(52,152,191,1));
+
+}
+
+.pageHeadingText {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -26,13 +34,17 @@ li {
     flex-direction: column;
     max-width: 40%;
     min-width: 40%;
-    background-color: #3498BF;
+    background-image: linear-gradient(to bottom right, rgba(84,191,181,1), rgba(255,255,255,0.4));
     margin-bottom: 40px;
     margin-left: 0;
     padding: 0 20px;
-    box-shadow: 20px 20px 10px #52E2F2;
+    box-shadow: 10px 10px 30px black;
     border-radius: 5px;
 
+}
+
+.unitName {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .statsContainer {
@@ -58,6 +70,7 @@ li {
 }
 
 .unitDescriptionP {
+    font-family: 'Source Serif 4', sans-serif;
     font-style: italic;
 }
 
