@@ -40,27 +40,51 @@ li {
     padding: 0 20px;
     box-shadow: 10px 10px 30px black;
     border-radius: 5px;
+    border: solid 1px #DAA520;
 
 }
 
 .unitName {
     font-family: 'Montserrat', sans-serif;
+    text-decoration: underline;
 }
+
 
 .statsContainer {
     display: flex;
     justify-content: space-between;
 }
 
+.nameHeaderContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nameHeader {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    padding-top: 2px;
+}
+
+.troopName {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 0;
+}
+
 .singleStatContainer {
     display: flex;
     flex-direction: column;
-    border:  1px solid black;
-    min-width:  25px;
+    min-width:  10px;
     align-items: center;
 }
 
-.statDescriptor{
+.statDescriptor {
     margin: 0;
 
 }

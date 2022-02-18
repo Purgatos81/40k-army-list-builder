@@ -17,7 +17,12 @@ interface UnitStats {
     Leadership : string,
     Save : string,
     CostPerModel : number,
-    Description : string
+    Description : string,
+    troopname : string,
+    championname : string,
+    championattack : string,
+    championleadership : string,
+    championpresent : boolean
   }
 }
 
@@ -43,7 +48,11 @@ const App = () => {
         {data.length > 0 ? data.map((unit : UnitStats, idx) => 
             {
               return <li className='liCard' key={idx}><h3 className='unitName'>{unit.attributes.Name}</h3>
-                                <div className='statsContainer'>  
+                                <div className='statsContainer'>
+                                  <div className='nameHeaderContainer'>
+                                    <h4 className='nameHeader'>Name:</h4>
+                                    <h4 className='troopName'>{unit.attributes.troopname}</h4>
+                                  </div>
                                   <div className='singleStatContainer'>
                                      <p className='statDescriptor'>M</p>
                                      <p className='statP'>{unit.attributes.Move}</p>
